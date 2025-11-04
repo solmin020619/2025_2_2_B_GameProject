@@ -22,7 +22,13 @@ public class MazeGenerator : MonoBehaviour
     private MazeCell[,] maze;
     private Stack<MazeCell> cellStack;
 
-    // Start is called before the first frame update
+    public void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         GenerateMaze();
